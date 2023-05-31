@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Definition of class Auth
+Script -> Definition of class Auth
 """
 from flask import request
 from typing import (
@@ -11,11 +11,11 @@ from typing import (
 
 class Auth:
     """
-    Manages the API authentication
+    Class: Manages the API authentication
     """
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """
-        Determines whether a given path requires authentication or not
+        Determines whether a given path require authentication 
         Args:
             - path(str): Url path to be checked
             - excluded_paths(List of str): List of paths that do not require
@@ -30,13 +30,13 @@ class Auth:
         elif path in excluded_paths:
             return False
         else:
-            for i in excluded_paths:
-                if i.startswith(path):
+            for k in excluded_paths:
+                if k.startswith(path):
                     return False
-                if path.startswith(i):
+                if path.startswith(k):
                     return False
-                if i[-1] == "*":
-                    if path.startswith(i[:-1]):
+                if k[-1] == "*":
+                    if path.startswith(k[:-1]):
                         return False
         return True
 
@@ -53,6 +53,6 @@ class Auth:
 
     def current_user(self, request=None) -> TypeVar('User'):
         """
-        Returns a User instance from information from a request object
+        Returns a User instance from infor from a request object
         """
         return None
