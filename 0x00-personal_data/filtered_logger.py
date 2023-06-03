@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-""" 0x05. Personal data
+""" Script ->  Personal data
 """
 
 import logging
-import os
-import re
 import mysql.connector
+import re
+import os
 from typing import List
 
 
