@@ -98,7 +98,7 @@ def update_password() -> tuple:
         AUTH.update_password(reset_token, new_password)
         return jsonify({"email": email, "message": "Password updated"}), 200
     except ValueError:
-        abort(403)
+        abort(400)
 
 
 if __name__ == "__main__":
