@@ -9,6 +9,7 @@ from typing import Union
 import uuid
 from user import User
 
+
 def _hash_password(password: str) -> bytes:
     """ Method: Hash password
     """
